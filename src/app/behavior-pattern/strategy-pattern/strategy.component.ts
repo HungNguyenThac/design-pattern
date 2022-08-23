@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import {
   StrategyCompression,
+  strategyMap,
   StrategyWithoutCompression,
 } from './strategy.service';
+import { Strategy } from './strategy.interface';
 
 @Component({
   selector: 'app-strategy-pattern',
@@ -25,13 +27,21 @@ import {
   providers: [StrategyCompression, StrategyWithoutCompression],
 })
 export class StrategyPatternComponent implements OnInit {
-  ngOnInit(): void {}
+  strategy?: Strategy;
 
-  toggleHandler(checked: boolean) {
-    
+  constructor(private injector: Injector) {}
+
+  ngOnInit(): void {
+    this.strategy = this.injector.get<Strategy>(strategyMap.get(true));
+  }
+
+  toggleHandler(isChecked: boolean) {
+    this.strategy = this.injector.get<Strategy>(strategyMap.get(isChecked));
+    console.log(this.strategy);
   }
 
   uploadFile($event: Event) {
-    
+    const filesArray = Array.from(($event.target as HTMLInputElement).files);
+    this.strategy.processFiles(filesArray);
   }
 }
