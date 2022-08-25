@@ -1,0 +1,136 @@
+$sudo_green: #50e2c2;
+$deep_blue: #23263a;
+$bulb_size: 50vh;
+$bulb_yellow: #ffff79;
+$bulb_side_yellow: #ffff00;
+$bulb_face: #657883;
+
+$Step_one: #6610f2;
+$Step_two: #d63384;
+$Step_three: #dc3545;
+$Step_four: #fd7e14;
+$Step_five: #ffc107;
+$Step_six: #198754;
+$Step_seven: #20c997;
+.bulb {
+  display: block;
+  color: black;
+  margin: 0 auto;
+  transition: 0.25s ease-in-out;
+  width: $bulb_size;
+  height: $bulb_size;
+  background: #bbb;
+  border-radius: 50%;
+}
+.bulb {
+  box-shadow: 0 -10px 100px $bulb_side_yellow;
+  background: $bulb_yellow;
+}
+
+.bulb.one {
+  box-shadow: 0 -10px 100px $Step_one;
+  background: $Step_one;
+}
+.bulb.two {
+  box-shadow: 0 -10px 100px $Step_two;
+  background: $Step_two;
+}
+.bulb.three {
+  box-shadow: 0 -10px 100px $Step_three;
+  background: $Step_three;
+}
+.bulb.four {
+  box-shadow: 0 -10px 100px $Step_four;
+  background: $Step_four;
+}
+.bulb.five {
+  box-shadow: 0 -10px 100px $Step_five;
+  background: $Step_five;
+}
+.bulb.six {
+  box-shadow: 0 -10px 100px $Step_six;
+  background: $Step_six;
+}
+.bulb.seven {
+  box-shadow: 0 -10px 100px $Step_seven;
+  background: $Step_seven;
+}
+
+h1,
+p {
+  color: $sudo_green;
+  text-align: center;
+}
+.block-status {
+  margin: 20px auto;
+  padding: 20px;
+  width: 200px;
+  border-radius: 8px;
+  background: #bbb;
+  text-align: center;
+}
+
+.block-status.one {
+  border: 12px solid $Step_one;
+
+  h1 {
+    transition: 0.25s ease-in-out;
+    color: $Step_one;
+  }
+}
+.block-status.two {
+  border: 12px solid $Step_two;
+  h1 {
+    color: $Step_two;
+  }
+}
+.block-status.three {
+  border: 12px solid $Step_three;
+  h1 {
+    color: $Step_three;
+  }
+}
+.block-status.four {
+  border: 12px solid $Step_four;
+  h1 {
+    color: $Step_four;
+  }
+}
+.block-status.five {
+  border: 12px solid $Step_five;
+  h1 {
+    color: $Step_five;
+  }
+}
+.block-status.six {
+  border: 12px solid $Step_six;
+  h1 {
+    color: $Step_six;
+  }
+}
+.block-status.seven {
+  border: 12px solid $Step_seven;
+  h1 {
+    color: $Step_seven;
+  }
+}
+
+#light {
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 12px;
+  width: 20%;
+  background: #23263a;
+  transition: 0.25s ease-in-out;
+  text-align: center;
+  border: 2px $sudo_green solid;
+  color: $sudo_green;
+  letter-spacing: 5px;
+  border-radius: 12px;
+  &:hover {
+    background: $sudo_green;
+    color: white;
+    border: 2px #23263a solid;
+  }
+}

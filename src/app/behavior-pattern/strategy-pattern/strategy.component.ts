@@ -5,6 +5,8 @@ import {
   StrategyWithoutCompression,
 } from './strategy.service';
 import { Strategy } from './strategy.interface';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GlobalService } from '../../global.service';
 
 @Component({
   selector: 'app-strategy-pattern',
@@ -29,7 +31,9 @@ import { Strategy } from './strategy.interface';
 export class StrategyPatternComponent implements OnInit {
   strategy?: Strategy;
 
-  constructor(private injector: Injector) {}
+  constructor(private injector: Injector, private service: GlobalService) {
+    this.service.changePatternName('Strategy pattern');
+  }
 
   ngOnInit(): void {
     this.strategy = this.injector.get<Strategy>(strategyMap.get(true));
