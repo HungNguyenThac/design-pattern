@@ -10,8 +10,7 @@ import { GlobalService } from '../../global.service';
 
 @Component({
   selector: 'app-strategy-pattern',
-  template: ` <h1>Strategy design Pattern</h1>
-    <mat-slide-toggle
+  template: ` <mat-slide-toggle
       color="primary"
       [checked]="true"
       (change)="toggleHandler($event.checked)"
@@ -32,7 +31,7 @@ export class StrategyPatternComponent implements OnInit {
   strategy?: Strategy;
 
   constructor(private injector: Injector, private service: GlobalService) {
-    this.service.changePatternName('Strategy pattern');
+    this.service.changePatternName('Strategy design pattern');
   }
 
   ngOnInit(): void {

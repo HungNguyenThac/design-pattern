@@ -66,7 +66,9 @@ export interface Pattern {
     <div class="pattern-name">
       <h1>{{ patternName | async }}</h1>
     </div>
-    <router-outlet></router-outlet>
+    <div class="router">
+      <router-outlet></router-outlet>
+    </div>
   `,
   styles: [
     `
@@ -88,6 +90,10 @@ export interface Pattern {
         text-transform: uppercase;
         color: #d63384;
         font-weight: 700;
+      }
+      .router {
+        max-width: 1200px;
+        margin: 0 auto;
       }
     `,
   ],
@@ -132,7 +138,7 @@ export class AppComponent implements OnInit {
     {
       name: 'Factory Method Pattern',
       url: 'creational/factory-method-pattern',
-      disable: true,
+      disable: false,
     },
     {
       name: 'Builder Pattern',

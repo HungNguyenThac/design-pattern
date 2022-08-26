@@ -18,7 +18,7 @@ export class StatePatternComponent {
   constructor(private service: GlobalService) {
     this.ctx = new LightBulb();
     this.status = this.ctx.getStatus();
-    this.service.changePatternName('State Pattern');
+    this.service.changePatternName('State Design Pattern');
   }
 
   nextStep() {
